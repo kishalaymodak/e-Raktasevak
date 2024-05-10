@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @default(uuid())
+  name String 
+  locality String 
+  city String 
+  state String
+  pincode String
+  age String
+  bloodgroup String
+  phone String @unique
+}
+model Hospital{
+  id String @id @default(uuid())
+  name String
+  loclity String
+  city String
+  state String
+  pincode String
+  phone String @unique
+  password String
+  hospitalId String @unique
+  bloods Blood[]
+}
+
+model Blood{
+  id String @id @default(uuid())
+  bloodtype String
+  bottleid String 
+  dob String
+  exp String
+  used Boolean @default(false)
+  author Hospital @relation(fields: [authorId], references: [id])
+  authorId String
+}
