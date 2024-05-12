@@ -105,6 +105,7 @@ function HospitalHome({ name, id, bloods }: home) {
                 ) {
                   return (
                     <TableBody
+                      key={blood.id}
                       id={blood.id}
                       BottleId={blood.bottleid}
                       Bloodtype={blood.bloodtype}

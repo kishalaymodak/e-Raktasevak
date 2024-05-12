@@ -125,6 +125,7 @@ export default function FindDonor() {
 
             {data.map((data) => (
               <TableBody
+                key={data.id}
                 name={data.name}
                 bloodgroup={data.bloodgroup}
                 age={data.age}

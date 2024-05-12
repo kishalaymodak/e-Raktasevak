@@ -128,6 +128,7 @@ export default function FindBlood() {
 
             {data.map((data) => (
               <TableBody
+                key={data.id}
                 name={data.name}
                 bloodgroup={data.bloods}
                 locality={data.loclity}

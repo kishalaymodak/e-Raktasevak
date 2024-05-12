@@ -27,7 +27,7 @@ export default function HospitalSignIn() {
         Sign In
       </h2>
       <p className="text-neutral-600 text-sm md:text-xl max-w-sm mt-2 dark:text-neutral-300">
-        If you Don't Have a account then{" "}
+        If you Don't Have a account then
         <Link className=" underline " href={"/hospital/signup"}>
           Sign Up
         </Link>
