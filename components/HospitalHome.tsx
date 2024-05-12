@@ -242,6 +242,7 @@ const Navbar = ({ name, id }: nav) => {
             </button>
             <button
               onClick={() => {
+                route.push("/");
                 signOut();
               }}
               type="button"
