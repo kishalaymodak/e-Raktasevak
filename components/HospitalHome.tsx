@@ -25,7 +25,7 @@ function HospitalHome({ name, id, bloods }: home) {
         <Navbar name={name} id={id} />
         <div className=" mx-20 my-10 grid grid-cols-4 justify-between gap-4">
           {["O+", "A+", "B+", "AB+", "O-", "A-", "B-", "AB-"].map((type) => (
-            <Card setData={setData} name={type} bloods={bloods} />
+            <Card key={type} setData={setData} name={type} bloods={bloods} />
           ))}
         </div>
         <div className="mb-10">
@@ -166,6 +166,7 @@ function Card({ name, BottleNo, bloods, setData }: card) {
 }
 
 interface table {
+  key: string;
   id: string;
   BottleId: string;
   Bloodtype: string;
@@ -173,7 +174,7 @@ interface table {
   exp: string;
 }
 
-const TableBody = ({ BottleId, Bloodtype, Dob, exp, id }: table) => {
+const TableBody = ({ key, BottleId, Bloodtype, Dob, exp, id }: table) => {
   return (
     <tbody>
       <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">

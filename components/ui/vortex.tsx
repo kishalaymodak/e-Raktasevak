@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { cn } from "@/utils/cn";
 import React, { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
@@ -235,7 +235,7 @@ export const Vortex = (props: VortexProps) => {
         resize(canvas, ctx);
       }
     });
-  }, []);
+  });
 
   return (
     <div className={cn("relative h-full w-full", props.containerClassName)}>
