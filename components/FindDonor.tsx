@@ -144,6 +144,7 @@ export default function FindDonor() {
 }
 
 const TableBody = ({
+  key,
   name,
   phone,
   age,
@@ -154,9 +155,13 @@ const TableBody = ({
   bloodgroup,
 }: user) => {
   return (
-    <tbody>
-      <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+    <tbody key={key}>
+      <tr
+        key={key}
+        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+      >
         <th
+          key={key}
           scope="row"
           className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
         >
@@ -165,8 +170,8 @@ const TableBody = ({
         <td className="px-6 py-4">{phone}</td>
         <td className="px-6 py-4">{age}</td>
         <td className="px-6 py-4">{locality}</td>
-        <td className="px-6 py-4">{city}</td>{" "}
-        <td className="px-6 py-4">{state}</td>{" "}
+        <td className="px-6 py-4">{city}</td>
+        <td className="px-6 py-4">{state}</td>
         <td className="px-6 py-4">{pincode}</td>
       </tr>
     </tbody>

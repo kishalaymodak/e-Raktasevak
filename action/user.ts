@@ -3,6 +3,7 @@
 import client from "@/db";
 
 export interface user {
+  key?: string;
   id?: string;
   name: string;
   locality: string;
