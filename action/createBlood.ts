@@ -19,9 +19,21 @@ export async function createBlood({
   exp,
 }: bloodtype) {
   // should add zod validation here
+
+  //date change
   const date = new Date(dob);
-  exp = String(date.setDate(date.getDate() - 1));
+  date.setDate(date.getDate() + 120);
+  const tomorrow = new Date(date);
+  const tomorrowString = tomorrow.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+  exp = tomorrowString;
+  //
+
   const bloodty = bloodtype.toUpperCase();
+
   const blood = await client.blood.create({
     data: {
       bloodtype: bloodty,
