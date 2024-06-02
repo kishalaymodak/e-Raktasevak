@@ -24,7 +24,7 @@ export async function createBlood({
   const date = new Date(dob);
   date.setDate(date.getDate() + 120);
   const tomorrow = new Date(date);
-  const tomorrowString = tomorrow.toLocaleDateString("en-US", {
+  const tomorrowString = tomorrow.toLocaleDateString("en-CA", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
