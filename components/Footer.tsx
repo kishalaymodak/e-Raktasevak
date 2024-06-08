@@ -32,7 +32,7 @@ function Footer() {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <Link
-                      href={"#"}
+                      href={"https://github.com/kishalaymodak/e-Raktasevak"}
                       className="hover:underline"
                     >
                       GitHub
