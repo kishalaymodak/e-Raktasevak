@@ -85,7 +85,7 @@ export default function DonerForm() {
         <p className="text-neutral-600 text-sm max-w-sm mt-2 mb-4 dark:text-neutral-300">
           Address
         </p>
-        <LabelInputContainer className="mb-4">
+        <LabelInputContainer className="mb-4  ">
           <Label htmlFor="locality"> Locality </Label>
           <Input
             onChange={(e) => {
