@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+  e-raktakosh:
+    image: e-raktakosh
+    container_name: e-raktakosh
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:mysecretpassword@postgres:5432/postgres
+    command: >
+      sh -c "npx prisma migrate dev && npm run start"
+volumes:
+  postgres_data: {}
